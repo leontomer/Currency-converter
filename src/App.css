@@ -1,0 +1,10 @@
+.app {
+    background-image: url(https://media.istockphoto.com/id/1319921490/photo/international-business-finance-currency-coins-for-global-financial-exchange-dollar-euro-pound.jpg?b=1&s=170667a&w=0&k=20&c=znrHX3_a_AfUFIEKKLYt-RR-qojc7aqVraW3gJWS3jg=);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
