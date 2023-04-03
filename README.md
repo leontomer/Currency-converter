@@ -5,3 +5,4 @@ Steps:
 4. run npm run build
 5. run npm run serve
 6. enter http://localhost:3000/
+<img width="774" alt="image" src="https://user-images.githubusercontent.com/41841316/229642295-7286e87f-baa7-48b5-99f2-3544db6ef19b.png">
