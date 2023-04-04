@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Converter from "./components/converter/Converter";
+import Converter from "./components/Converter/converter";
 function App() {
   return (
     <div className="app">
