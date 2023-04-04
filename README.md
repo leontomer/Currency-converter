@@ -7,6 +7,7 @@ Steps:
 5. run npm run serve
 6. enter http://localhost:3000/
 7. in order to run test, run npm run test in the terminal.
+
 --please note: the convert api which i used is limited for 250 calls per month
 
-   <img width="774" alt="image" src="https://user-images.githubusercontent.com/41841316/229642295-7286e87f-baa7-48b5-99f2-3544db6ef19b.png">
+![image](https://user-images.githubusercontent.com/41841316/229796216-0cb87260-aa6a-4a47-a86f-07c35f47210e.png)
