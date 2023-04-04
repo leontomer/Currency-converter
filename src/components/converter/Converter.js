@@ -5,22 +5,24 @@ import {
   appHeader,
   fromLabel,
   toLabel,
-  ConvertButtonText,
+  convertButtonText,
   replaceSidesIcon,
+  inputLabelText,
 } from "../../utils/constants";
 import Button from "@mui/material/Button";
 import Convert from "../../api/Convert";
 import CircularProgress from "@mui/material/CircularProgress";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import "./converter.css";
+import TextField from "@mui/material/TextField";
+import "./Converter.css";
 
 export default function Converter() {
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("ILS");
   const [convertResult, setConvertResult] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   const handleConvert = async (e) => {
     e.preventDefault();
@@ -39,27 +41,29 @@ export default function Converter() {
     <div className="main-container">
       <Card>
         <CardContent>
-          <h1>{appHeader}</h1>
+          <h1 className="header">{appHeader}</h1>
           <form onSubmit={handleConvert}>
             <span className="data-container">
-              <div className="row1">
-                <label>{fromLabel}</label>
+              <div>
                 <div>
                   <CurrencyDropDown
-                    className="items"
                     currencies={currencies}
                     currency={fromCurrency}
                     setCurrency={setFromCurrency}
+                    labelName={fromLabel}
                   />
                 </div>
                 <div className="convert-input">
-                  <input
+                  <TextField
+                    id="currency-input"
+                    InputProps={{ inputProps: { min: "0" } }}
+                    className="input-field"
+                    required
                     type="number"
                     value={amount}
+                    label={inputLabelText}
                     onChange={(e) => setAmount(e.target.value)}
-                    min="0"
-                    className="items"
-                    required
+                    variant="standard"
                   />
                 </div>
               </div>
@@ -70,14 +74,14 @@ export default function Converter() {
                 width="35px"
                 onClick={handleReplaceCurrencies}
               />
-              <div className="row2">
-                <label>{toLabel}</label>
+              <div>
                 <CurrencyDropDown
                   currencies={currencies}
                   currency={toCurrency}
                   setCurrency={setToCurrency}
+                  labelName={toLabel}
                 />
-                <div className="items">{convertResult}</div>
+                <div className="convert-result">{convertResult}</div>
               </div>
             </span>
             <div className="convert-submit">
@@ -85,7 +89,7 @@ export default function Converter() {
                 {isLoading && <CircularProgress className="loader" />}
               </div>
               <Button variant="contained" type="submit">
-                {ConvertButtonText}
+                {convertButtonText}
               </Button>
             </div>
           </form>
